@@ -7,6 +7,7 @@ public class BubbleSort {
     static int size;
     static int [] arrayNumbers;
     static Random rnd;
+    static  int [] output;
 
     public static void main(String[] args) {
         inputData = new Scanner(System.in);
@@ -21,15 +22,9 @@ public class BubbleSort {
             arrayNumbers[i] = randomNum;
             System.out.print(arrayNumbers[i] + " ");
         }
-       arrayNumbers = sorting(arrayNumbers);
-        for (int i = 0; i < arrayNumbers.length; i++){
-            /*if(i != arrayNumbers.length){
-                System.out.print(arrayNumbers[i] + ", ");
-            }
-            else {
-                System.out.print(arrayNumbers[i]);
-            }*/
-            System.out.println("\n" + arrayNumbers[i] + ", ");
+       output = sorting(arrayNumbers);
+        for (int i = 0; i < output.length; i++){//changes
+            System.out.print(output[i] + ", ");
         }
     }
     static int[] sorting(int [] myArray){
