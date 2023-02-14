@@ -10,30 +10,33 @@ public class BubbleSort {
     static  int [] output;
 
     public static void main(String[] args) {
-        inputData = new Scanner(System.in);
         System.out.println("Please enter size of array");
-        rnd = new Random();
+        inputData = new Scanner(System.in);
         size = inputData.nextInt();
-        System.out.println("Array before sorting");
+        rnd = new Random();
         arrayNumbers = new int[size];
+        System.out.println("Array before sorting");
 
         for(int i = 0; i < size; i++){
             int randomNum = rnd.nextInt(100) + 1;
             arrayNumbers[i] = randomNum;
             System.out.print(arrayNumbers[i] + " ");
         }
-       output = sorting(arrayNumbers);
-        for (int i = 0; i < output.length; i++){//changes
-            System.out.print(output[i] + ", ");
+        sorting(arrayNumbers);
+        for(int k = 0; k < size; k++){
+            System.out.println("\n" + arrayNumbers[k]);
         }
     }
+
+    //TODO Change algorithm. This style of algorithm are wrong
+    //TODO output wrong
     static int[] sorting(int [] myArray){
         int tempNum;
         for (int i = 0; i < myArray.length; i++){
-            for(int j = 1; j < myArray.length - i; j++){
-                if (myArray[j-1] > myArray[j]){
+            for(int j = 1; j < myArray.length - i - 1; j++){
+                if (myArray[j] > myArray[j+1]){
                     tempNum = myArray[j];
-                    myArray[j-1] = myArray[j];
+                    myArray[j] = myArray[j+1];
                     myArray[j] = tempNum;
                 }
             }
