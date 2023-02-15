@@ -7,7 +7,6 @@ public class BubbleSort {
     static int size;
     static int [] arrayNumbers;
     static Random rnd;
-    static  int [] output;
 
     public static void main(String[] args) {
         System.out.println("Please enter size of array");
@@ -28,19 +27,25 @@ public class BubbleSort {
         }
     }
 
-    //TODO Change algorithm. This style of algorithm are wrong
-    //TODO output wrong
-    static int[] sorting(int [] myArray){
-        int tempNum;
-        for (int i = 0; i < myArray.length; i++){
-            for(int j = 1; j < myArray.length - i - 1; j++){
-                if (myArray[j] > myArray[j+1]){
-                    tempNum = myArray[j];
+
+    static void sorting(int [] myArray){
+        int temp;
+        boolean swapped;
+
+        for (int i = 0; i < myArray.length - 1; i++){
+            swapped = false;
+            for (int j = 0; j < myArray.length - i - 1; j++){
+                if(myArray[j] > myArray[j + 1]){
+                    temp = myArray[j];
                     myArray[j] = myArray[j+1];
-                    myArray[j] = tempNum;
+                    myArray[j+1] = temp;
+                    swapped = true;
                 }
             }
+
+            if(!swapped){
+                break;
+            }
         }
-        return myArray;
     }
 }
