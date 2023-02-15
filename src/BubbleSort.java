@@ -10,10 +10,12 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         System.out.println("Please enter size of array");
+
         inputData = new Scanner(System.in);
         size = inputData.nextInt();
         rnd = new Random();
         arrayNumbers = new int[size];
+
         System.out.println("Array before sorting");
 
         for(int i = 0; i < size; i++){
@@ -21,13 +23,12 @@ public class BubbleSort {
             arrayNumbers[i] = randomNum;
             System.out.print(arrayNumbers[i] + " ");
         }
+        System.out.println("\nArray after sorting");
         sorting(arrayNumbers);
-        for(int k = 0; k < size; k++){
-            System.out.println("\n" + arrayNumbers[k]);
+        for(int i = 0; i < size; i++){
+            System.out.print(arrayNumbers[i] + " ");
         }
     }
-
-
     static void sorting(int [] myArray){
         int temp;
         boolean swapped;
@@ -42,7 +43,7 @@ public class BubbleSort {
                     swapped = true;
                 }
             }
-
+            //if two elements sorted
             if(!swapped){
                 break;
             }
